@@ -30,3 +30,18 @@ class CallMeFashionTank extends Robot {
   override def onScannedRobot(ev: ScannedRobotEvent) = {  }
 }
 
+class LookAroundAndFireTank extends Robot {
+
+  override def run: Unit = {
+    while(true) {
+      turnGunLeft(360)
+      turnGunRight(360)
+    }
+  }
+
+  override def onHitRobot(ev: HitRobotEvent) =  {  }
+
+  override def onScannedRobot(ev: ScannedRobotEvent) = {
+    fire(2)
+  }
+}
